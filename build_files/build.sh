@@ -23,4 +23,4 @@ dnf5 -y copr disable agriffis/neovim-nightly
 
 systemctl enable podman.socket
 
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm ostree
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install "ostree"
