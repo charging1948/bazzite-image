@@ -22,3 +22,6 @@ dnf5 -y copr disable agriffis/neovim-nightly
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix > nix-installer.sh
+chmod +x nix-installer.sh
