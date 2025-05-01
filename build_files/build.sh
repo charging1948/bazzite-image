@@ -10,7 +10,7 @@ set -ouex pipefail
 # https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
 
 # this installs a package from fedora repos
-dnf5 install -y tmux neovide stow
+dnf5 install -y tmux neovide stow go uv
 
 # Use a COPR Example:
 #
@@ -23,4 +23,4 @@ dnf5 -y copr disable agriffis/neovim-nightly
 
 systemctl enable podman.socket
 
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install "ostree"
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install --no-confirm ostree
