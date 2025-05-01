@@ -2,6 +2,19 @@
 
 set -ouex pipefail
 
+
+### Set important stuff (needed for nix)
+
+cat >/etc/ostree/prepare-root.conf <<'EOL'
+[composefs]
+enabled = yes
+[sysroot]
+readonly = true
+[root]
+transient = true
+EOL
+
+
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
@@ -23,4 +36,5 @@ dnf5 -y copr disable agriffis/neovim-nightly
 
 systemctl enable podman.socket
 
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install ostree --no-confirm --no-start-daemon
+
+# curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install ostree --no-confirm --no-start-daemon
