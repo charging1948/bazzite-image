@@ -35,6 +35,6 @@ dnf5 -y copr disable agriffis/neovim-nightly
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-
+mkdir /nix
 
 # curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install ostree --no-confirm --no-start-daemon
