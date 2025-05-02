@@ -3,18 +3,6 @@
 set -ouex pipefail
 
 
-### Set important stuff (needed for nix)
-
-cat >/etc/ostree/prepare-root.conf <<'EOL'
-[composefs]
-enabled = yes
-[sysroot]
-readonly = true
-[root]
-transient = true
-EOL
-
-
 ### Install packages
 
 # Packages can be installed from any enabled yum repo on the image.
