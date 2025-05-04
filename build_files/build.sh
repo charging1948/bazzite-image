@@ -15,11 +15,6 @@ dnf5 install -y tmux stow go uv
 
 # Use a COPR Example:
 #
-dnf5 -y copr enable agriffis/neovim-nightly
-dnf5 install -y neovim
-# Disable COPRs so they don't end up enabled on the final image:
-dnf5 -y copr disable agriffis/neovim-nightly
-
 dnf5 -y copr enable lukenukem/asus-linux
 dnf5 install -y asusctl supergfxctl
 dnf5 -y copr disable lukenukem/asus-linux
@@ -31,6 +26,5 @@ dnf5 install -y asusctl-rog-gui
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
-mkdir /nix
 
-# curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install ostree --no-confirm --no-start-daemon
+mkdir /nix
