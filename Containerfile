@@ -17,7 +17,6 @@ FROM ghcr.io/ublue-os/bazzite-asus:testing
 
 ### SYSTEM FILES
 COPY system_files /
-RUN ostree container commit
 
 
 ### MODIFICATIONS
