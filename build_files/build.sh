@@ -2,6 +2,14 @@
 
 set -ouex pipefail
 
+dnf5 -y copr enable bieszczaders/kernel-cachyos
+dnf5 install -y kernel-cachyos kernel-cachyos-devel-matched
+dnf5 -y copr disable bieszczaders/kernel-cachyos
+
+dnf5 -y copr enable bieszczaders/kernel-cachyos-addons
+dnf5 install -y libcap-ng libcap-ng-devel procps-ng procps-ng-devel
+dnf5 install -y uksmd
+dnf5 -y copr disable bieszczaders/kernel-cachyos-addons
 
 ### Install packages
 
@@ -38,5 +46,6 @@ dnf5 -y copr disable agriffis/neovim-nightly
 #### Example for enabling a System Unit File
 
 systemctl enable podman.socket
+# systemctl enable ksmd.service
 
 mkdir /nix
